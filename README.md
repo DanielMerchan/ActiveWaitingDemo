@@ -42,7 +42,8 @@ Deploy the **DemoSB** Service Bus project and check it works. You can add dummy 
 
 **Deploy the ActiveWaitingBPM**
 Deploy the **ActiveWaitingBPM** Application including the BPM Process and the UI of the Human Task.
-You can test the BPM Process with Oracle Enterprise Manager
+You can test the BPM Process with Oracle Enterprise Manager.
+Remember to add the **weblogic** user or your test users to the DemoProcess Role using the BPM Workspace!.
 
 **Run / Deploy the ActiveWaiting - Custom Task List**
 Deploy the **CustomTaskList** Application (or just run the **welcome.jsf** page). In this application you can click *Start Async Process* which will open an ADF Popup showing how the BPM Process is being executed on behind.
