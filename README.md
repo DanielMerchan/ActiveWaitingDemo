@@ -10,7 +10,7 @@ Image Placeholder
 
 # Explanation of the Demonstration
 
-Introduce Blog Link
+How this works can be found in my blog: LINK
 
 ## Applications / Project Structure
 
