@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.2.1.9.14" id="DataControls"
+                    Package="com.magicpigeon.demo">
+  <AdapterDataControl id="AssignedTasks" FactoryClass="oracle.adf.model.adapter.bean.BeanDCFactoryImpl"
+                      ImplDef="oracle.adf.model.adapter.bean.BeanDCDefinition" SupportsTransactions="false"
+                      SupportsSortCollection="true" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.magicpigeon.demo.jsf.taskflow.assignedtasks.AssignedTasks"
+                      BeanClass="com.magicpigeon.demo.jsf.taskflow.assignedtasks.AssignedTasks"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="com.magicpigeon.demo.model.Task"/>
+    </CreatableTypes>
+    <Source>
+      <bean-definition BeanClass="com.magicpigeon.demo.jsf.taskflow.assignedtasks.AssignedTasks"
+                       DataControlHandler="oracle.adf.model.adapter.bean.DataFilterHandler" AccessMode="scrollable"
+                       EagerPersist="false" xmlns="http://xmlns.oracle.com/adfm/adapter/bean"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

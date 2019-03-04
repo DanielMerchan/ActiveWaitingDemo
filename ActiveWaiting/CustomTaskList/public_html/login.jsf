@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+xmlns:trh="http://myfaces.apache.org/trinidad/html">
+    <af:document title="login.jsf" id="d1">
+        <af:form id="f1" defaultCommand="b1">
+            <af:panelGridLayout id="pgl1">
+              <af:gridRow height="85%" id="gr1"> 
+                <af:gridCell width="100%" id="gc1" halign="center" valign="middle">
+            <af:panelBox text="BPM Active waiting demo" id="pb1" showDisclosure="false">
+              <f:facet name="toolbar"/>
+              <af:panelFormLayout id="pfl1">
+                <af:inputText label="Username" id="it1" value="#{loginBean.username}" autoComplete="on"/>
+                <af:inputText label="Password" id="it2" secret="true" value="#{loginBean.password}"/>
+                <f:facet name="footer">
+                  <af:panelGroupLayout id="pgl4" halign="end" layout="vertical">
+                    <af:button text="Login" id="b1" action="#{loginBean.doLogin}"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelFormLayout>
+            </af:panelBox>
+                </af:gridCell>
+              </af:gridRow>
+              <af:gridRow id="gr2" height="15%">
+                <af:gridCell id="gc2" width="100%">
+                  <af:panelGroupLayout id="pgl2"/>
+                </af:gridCell>
+              </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+        <!-- Header and Meta tags attached to the Header -->
+      <f:facet name="metaContainer">
+        <af:group id="g2">
+          <trh:meta name="apple-mobile-web-app-capable" content="yes" id="m3"/>
+          <trh:meta name="viewport"
+                    content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+                    id="m4"/>
+        </af:group>
+      </f:facet>
+    </af:document>
+</f:view>

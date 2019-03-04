@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions
+     name="dbDemo-concrete"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+     xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:WL5G3N1="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+     xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <WL5G3N0:import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+         location="dbDemo.wsdl"/>
+    <WL5G3N0:binding name="dbDemo_ptt-binding" type="WL5G3N1:dbDemo_ptt">
+        <WL5G3N2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <WL5G3N0:operation name="merge">
+            <WL5G3N2:operation soapAction="merge"/>
+            <WL5G3N0:input>
+                <WL5G3N2:body use="literal"/>
+            </WL5G3N0:input>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="insert">
+            <WL5G3N2:operation soapAction="insert"/>
+            <WL5G3N0:input>
+                <WL5G3N2:body use="literal"/>
+            </WL5G3N0:input>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="dbDemoSelect">
+            <WL5G3N2:operation soapAction="dbDemoSelect"/>
+            <WL5G3N0:input>
+                <WL5G3N2:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N2:body use="literal"/>
+            </WL5G3N0:output>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="selectByPrimaryKey">
+            <WL5G3N2:operation soapAction="selectByPrimaryKey"/>
+            <WL5G3N0:input>
+                <WL5G3N2:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N2:body use="literal"/>
+            </WL5G3N0:output>
+        </WL5G3N0:operation>
+    </WL5G3N0:binding>
+    <WL5G3N0:service name="dbDemo_ptt-bindingQSService">
+        <WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+        <WL5G3N0:port name="dbDemo_ptt-bindingQSPort" binding="WL5G3N1:dbDemo_ptt-binding">
+            <WL5G3N2:address location="http://localhost:7101/DemoSB/DemoPS"/>
+        </WL5G3N0:port>
+    </WL5G3N0:service>
+</WL5G3N0:definitions>

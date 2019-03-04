@@ -1,0 +1,4 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://localhost:7101/soa-infra/services/default/DemoProcess/Demo.service?WSDL#%7Bhttp%3A%2F%2Fxmlns.oracle.com%2Fbpmn%2FbpmnProcess%2FDemo%7DDemo.service"
+          uri="../com/magicpigeon/demo/bpm/client/Demo.service.wsdl"/>
+</catalog>

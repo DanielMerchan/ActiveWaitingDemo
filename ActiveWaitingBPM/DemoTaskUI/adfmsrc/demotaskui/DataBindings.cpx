@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="demotaskui" ClientType="Generic">
+  <pageMap>
+    <page path="/DemoHT_TaskDetails.jspx" usageId="demotaskui_DemoHT_TaskDetailsPageDef"/>
+    <page path="/DemoHT_TaskNotification.jspx" usageId="demotaskui_DemoHT_TaskNotificationPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="demotaskui_DemoHT_TaskDetailsPageDef" path="demotaskui.pageDefs.DemoHT_TaskDetailsPageDef"/>
+    <page id="demotaskui_DemoHT_TaskNotificationPageDef" path="demotaskui.pageDefs.DemoHT_TaskNotificationPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DemoTaskUI_DemoHT" path="demotaskui.DemoTaskUI_DemoHT"/>
+  </dataControlUsages>
+</Application>

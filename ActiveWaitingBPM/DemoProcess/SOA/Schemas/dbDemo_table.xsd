@@ -1,0 +1,47 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbDemo" elementFormDefault="qualified"
+     attributeFormDefault="qualified" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbDemo"
+     xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="CustomProcessInfoCollection" type="CustomProcessInfoCollection"/>
+    <xs:complexType name="CustomProcessInfoCollection">
+        <xs:sequence>
+            <xs:element name="CustomProcessInfo" type="CustomProcessInfo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="CustomProcessInfo">
+        <xs:sequence>
+            <xs:element name="customId" type="string255" minOccurs="0" nillable="true"/>
+            <xs:element name="instanceNumber" type="xs:decimal" minOccurs="0" nillable="true"/>
+            <xs:element name="instanceId" type="string255"/>
+            <xs:element name="compositeName" type="string255" minOccurs="0" nillable="true"/>
+            <xs:element name="compositeDn" type="string255" minOccurs="0" nillable="true"/>
+            <xs:element name="compositeLabel" type="string255" minOccurs="0" nillable="true"/>
+            <xs:element name="compositeRevision" type="string255" minOccurs="0" nillable="true"/>
+            <xs:element name="compositeInstanceId" type="string255" minOccurs="0" nillable="true"/>
+            <xs:element name="processDn" type="string255" minOccurs="0" nillable="true"/>
+            <xs:element name="activityName" type="string20" minOccurs="0" nillable="true"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="dbDemoSelect_customIdInputParameters" type="dbDemoSelect_customId"/>
+    <xs:complexType name="dbDemoSelect_customId">
+        <xs:sequence>
+            <xs:element name="customId" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CustomProcessInfoPrimaryKey" type="CustomProcessInfoPrimaryKey"/>
+    <xs:complexType name="CustomProcessInfoPrimaryKey">
+        <xs:sequence>
+            <xs:element name="instanceId" type="xs:string" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="string255">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="string20">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

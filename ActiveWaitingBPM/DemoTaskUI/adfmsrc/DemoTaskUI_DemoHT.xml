@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.9.14" id="DemoTaskUI_DemoHT"
+          BeanClass="DemoTaskUI_DemoHT" isJavaBased="false">
+  <MethodAccessor IsCollection="false" Type="DemoTaskUI_DemoHT.getTaskDetails"
+                  BeanClass="DemoTaskUI_DemoHT.getTaskDetails" id="getTaskDetails" ReturnNodeName="Return">
+    <ParameterInfo id="bpmWorklistContext" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="bpmWorklistTaskId" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="bpmWorklistTaskVersion" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

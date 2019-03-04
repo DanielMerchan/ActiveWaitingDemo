@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.16.48" id="AssignedTasksPageDef"
+                Package="com.magicpigeon.demo.jsf.taskflow.assignedtasks">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="AssignedTasks" id="AssignedTasksIterator"/>
+    <accessorIterator MasterBinding="AssignedTasksIterator" Binds="tasks" RangeSize="25" DataControl="AssignedTasks"
+                      BeanClass="com.magicpigeon.demo.model.Task" id="tasksIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="tasksIterator" id="tasks">
+      <nodeDefinition DefName="com.magicpigeon.demo.model.Task" Name="tasks0">
+        <AttrNames>
+          <Item Value="taskNumber"/>
+          <Item Value="title"/>
+          <Item Value="priority"/>
+          <Item Value="state"/>
+          <Item Value="creator"/>
+          <Item Value="taskId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="retrieveAssignedUserTasks" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="retrieveAssignedUserTasks" IsViewObjectMethod="false" DataControl="AssignedTasks"
+                  InstanceName="bindings.retrieveAssignedUserTasks.dataControl.dataProvider"
+                  ReturnName="data.AssignedTasks.methodResults.retrieveAssignedUserTasks_retrieveAssignedUserTasks_dataControl_dataProvider_retrieveAssignedUserTasks_result"/>
+  </bindings>
+</pageDefinition>

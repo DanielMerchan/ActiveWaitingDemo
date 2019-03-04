@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.magicpigeon.demo" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/welcome.jsf" usageId="com_magicpigeon_demo_welcomePageDef"/>
+    <page path="/WEB-INF/com/magicpigeon/demo/jsf/taskflow/assignedtasks/AssignedTasks.jsff"
+          usageId="com_magicpigeon_demo_AssignedTasksPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_magicpigeon_demo_welcomePageDef" path="com.magicpigeon.demo.pageDefs.welcomePageDef"/>
+    <page id="com_magicpigeon_demo_AssignedTasksPageDef"
+          path="com.magicpigeon.demo.jsf.taskflow.assignedtasks.AssignedTasksPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="AssignedTasks" path="com.magicpigeon.demo.AssignedTasks"/>
+  </dataControlUsages>
+</Application>

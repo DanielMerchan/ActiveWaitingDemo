@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout id="pgl2" layout="vertical">
+    <af:panelHeader text="BPM Active Waiting Demo" id="ph1">
+      <f:facet name="context"/>
+      <f:facet name="toolbar"/>
+      <f:facet name="menuBar"/>
+      <f:facet name="legend"/>
+      <f:facet name="info"/>
+      <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="statusBar" partialTriggers="b2">
+        <f:facet name="menus"/>
+        <f:facet name="toolbar">
+          <af:toolbar id="t2">
+            <af:button text="Start Async BPM Process" id="b1"
+                       actionListener="#{backingBeanScope.assignedTasksBacking.startAsyncProcess}"/>
+            <af:button text="Refresh" id="b2"
+                       actionListener="#{backingBeanScope.assignedTasksBacking.refreshAssignedTasks}"/>
+          </af:toolbar>
+        </f:facet>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.tasks.collectionModel}" var="row" rows="#{bindings.tasks.rangeSize}"
+                  emptyText="#{bindings.tasks.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0" selectedRowKeys="#{bindings.tasks.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.tasks.collectionModel.makeCurrent}" rowSelection="single"
+                  fetchSize="#{bindings.tasks.rangeSize}" id="t1">
+          <af:column headerText="Task Number" id="c1">
+            <af:outputText value="#{row.taskNumber}" shortDesc="#{bindings.tasks.hints.taskNumber.tooltip}" id="ot1"/>
+          </af:column>
+          <af:column headerText="Title" id="c2">
+            <af:outputText value="#{row.title}" shortDesc="#{bindings.tasks.hints.title.tooltip}" id="ot2"/>
+          </af:column>
+          <af:column headerText="Priority" id="c3">
+            <af:outputText value="#{row.priority}" shortDesc="#{bindings.tasks.hints.priority.tooltip}" id="ot3"/>
+          </af:column>
+          <af:column headerText="State" id="c4">
+            <af:outputText value="#{row.state}" shortDesc="#{bindings.tasks.hints.state.tooltip}" id="ot4"/>
+          </af:column>
+          <af:column headerText="Creator" id="c5">
+            <af:outputText value="#{row.creator}" shortDesc="#{bindings.tasks.hints.creator.tooltip}" id="ot5"/>
+          </af:column>
+          <af:column headerText="Task ID" id="c6">
+            <af:outputText value="#{row.taskId}" shortDesc="#{bindings.tasks.hints.taskId.tooltip}" id="ot6"/>
+          </af:column>
+        </af:table>
+      </af:panelCollection>
+      <af:group id="g1">
+        <af:popup contentDelivery="lazyUncached" autoCancel="disabled" id="p1"
+                  binding="#{backingBeanScope.assignedTasksBacking.busyPopup}">
+          <af:dialog id="d1" title="Initiating Very Slow Process" closeIconVisible="false" type="none">
+            <af:panelGroupLayout id="pgl3" layout="vertical" halign="center" partialTriggers="p2">
+              <af:image source="/adf/images/skyros-v1/clock_positive_lg.gif" shortDesc="Loading..." id="i2"/>
+              <af:image source="data:image/png;base64,#{viewScope.assignedTasksHelper.processAuditImage}"
+                        shortDesc="BLABLA" rendered="#{!empty viewScope.assignedTasksHelper.processAuditImage}"
+                        id="it1"/>
+              <af:inputText id="it2" rows="5" simple="true" value="#{viewScope.assignedTasksHelper.backgroundText}"
+                            dimensionsFrom="auto"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl1" binding="#{backingBeanScope.assignedTasksBacking.pglPollerWrapper}">
+              <af:poll id="p2" interval="-1" pollListener="#{backingBeanScope.assignedTasksBacking.pollerEvent}"
+                       clientComponent="true" binding="#{backingBeanScope.assignedTasksBacking.poller}"/>
+            </af:panelGroupLayout>
+          </af:dialog>
+        </af:popup>
+      </af:group>
+    </af:panelHeader>
+  <af:resource type="javascript">
+      function disablePoller(id) {
+          var poll = src.findComponent(id);
+          if (poll != null) {
+              poll.setInterval( - 1);
+          }
+      }
+    </af:resource>
+  </af:panelGroupLayout>
+</ui:composition>

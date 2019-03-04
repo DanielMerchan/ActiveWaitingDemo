@@ -1,0 +1,45 @@
+<wsdl:definitions
+     name="dbDemo"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+     xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+     xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+     xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbDemo"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    >
+  <plt:partnerLinkType name="dbDemo_plt" >
+    <plt:role name="dbDemo_role" >
+      <plt:portType name="tns:dbDemo_ptt" />
+    </plt:role>
+  </plt:partnerLinkType>
+    <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema" >
+        <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbDemo" schemaLocation="dbDemo_table.xsd" />
+      </schema>
+    </wsdl:types>
+    <wsdl:message name="dbDemoSelect_inputParameters">
+        <wsdl:part name="dbDemoSelect_inputParameters" element="top:dbDemoSelect_customIdInputParameters"/>
+    </wsdl:message>
+    <wsdl:message name="selectByPrimaryKey_inputParameters">
+        <wsdl:part name="selectByPrimaryKey_inputParameters" element="top:CustomProcessInfoPrimaryKey"/>
+    </wsdl:message>
+    <wsdl:message name="CustomProcessInfoCollection_msg">
+        <wsdl:part name="CustomProcessInfoCollection" element="top:CustomProcessInfoCollection"/>
+    </wsdl:message>
+    <wsdl:portType name="dbDemo_ptt">
+        <wsdl:operation name="merge">
+            <wsdl:input message="tns:CustomProcessInfoCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <wsdl:input message="tns:CustomProcessInfoCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="dbDemoSelect">
+            <wsdl:input message="tns:dbDemoSelect_inputParameters"/>
+            <wsdl:output message="tns:CustomProcessInfoCollection_msg"/>
+        </wsdl:operation>
+        <wsdl:operation name="selectByPrimaryKey">
+            <wsdl:input message="tns:selectByPrimaryKey_inputParameters"/>
+            <wsdl:output message="tns:CustomProcessInfoCollection_msg"/>
+        </wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

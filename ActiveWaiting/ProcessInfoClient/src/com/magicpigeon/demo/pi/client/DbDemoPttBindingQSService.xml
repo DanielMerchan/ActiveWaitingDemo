@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns0="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname namespaceURI="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+                     localpart="dbDemo_ptt-bindingQSService"/>
+      <port-info>
+         <wsdl-port namespaceURI="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+                    localpart="dbDemo_ptt-bindingQSPort"/>
+         <runtime/>
+         <operations>
+            <operation name="merge"/>
+            <operation name="insert"/>
+            <operation name="dbDemoSelect"/>
+            <operation name="selectByPrimaryKey"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

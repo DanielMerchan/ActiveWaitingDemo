@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N2:definitions
+     name="dbDemo"
+     targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+     xmlns:WL5G3N0="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:WL5G3N1="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+     xmlns:WL5G3N2="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:WL5G3N3="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbDemo"
+    >
+    <WL5G3N0:partnerLinkType name="dbDemo_plt">
+        <WL5G3N0:role name="dbDemo_role">
+            <WL5G3N0:portType name="WL5G3N1:dbDemo_ptt"/>
+        </WL5G3N0:role>
+    </WL5G3N0:partnerLinkType>
+    <WL5G3N2:types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/"
+             xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"
+             xmlns:top="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbDemo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+            <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbDemo" schemaLocation="../Schemas/dbDemo_table.xsd"/>
+        </schema>
+    </WL5G3N2:types>
+    <WL5G3N2:message name="CustomProcessInfoCollection_msg">
+        <WL5G3N2:part name="CustomProcessInfoCollection" element="WL5G3N3:CustomProcessInfoCollection"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="dbDemoSelect_inputParameters">
+        <WL5G3N2:part name="dbDemoSelect_inputParameters" element="WL5G3N3:dbDemoSelect_customIdInputParameters"/>
+    </WL5G3N2:message>
+    <WL5G3N2:message name="selectByPrimaryKey_inputParameters">
+        <WL5G3N2:part name="selectByPrimaryKey_inputParameters" element="WL5G3N3:CustomProcessInfoPrimaryKey"/>
+    </WL5G3N2:message>
+    <WL5G3N2:portType name="dbDemo_ptt">
+        <WL5G3N2:operation name="merge">
+            <WL5G3N2:input message="WL5G3N1:CustomProcessInfoCollection_msg"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="insert">
+            <WL5G3N2:input message="WL5G3N1:CustomProcessInfoCollection_msg"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="dbDemoSelect">
+            <WL5G3N2:input message="WL5G3N1:dbDemoSelect_inputParameters"/>
+            <WL5G3N2:output message="WL5G3N1:CustomProcessInfoCollection_msg"/>
+        </WL5G3N2:operation>
+        <WL5G3N2:operation name="selectByPrimaryKey">
+            <WL5G3N2:input message="WL5G3N1:selectByPrimaryKey_inputParameters"/>
+            <WL5G3N2:output message="WL5G3N1:CustomProcessInfoCollection_msg"/>
+        </WL5G3N2:operation>
+    </WL5G3N2:portType>
+</WL5G3N2:definitions>

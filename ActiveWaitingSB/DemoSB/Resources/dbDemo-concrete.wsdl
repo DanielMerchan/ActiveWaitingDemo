@@ -1,0 +1,36 @@
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo" name="dbDemo-concrete" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <wsdl:import location="dbDemo.wsdl" namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo"/>
+    <wsdl:binding name="dbDemo_ptt-binding" type="dbd:dbDemo_ptt" xmlns:dbd="http://xmlns.oracle.com/pcbpel/adapter/db/ActiveWaitingSB/DemoSB/dbDemo">
+        <soap:binding style="document" transport="http://www.bea.com/wli/sb/transports/jca"/>
+        <wsdl:operation name="merge">
+            <soap:operation soapAction="merge"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="insert">
+            <soap:operation soapAction="insert"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="dbDemoSelect">
+            <soap:operation soapAction="dbDemoSelect"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="selectByPrimaryKey">
+            <soap:operation soapAction="selectByPrimaryKey"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

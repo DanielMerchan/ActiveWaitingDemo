@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+   <entry key="root_descriptor_alias">CUSTOM_PROCESS_INFO</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_REVISION:db_column_not_null">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO.INSTANCE_ID:db_column_not_null">true</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_LABEL:db_column_size">255</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_DN:db_column_type">VARCHAR2</entry>
+   <entry key="CUSTOM_PROCESS_INFO.PROCESS_DN:db_column_not_null">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO.CUSTOM_ID:db_column_not_null">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO.ACTIVITY_NAME:db_column_not_null">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_9">ACTIVITY_NAME</entry>
+   <entry key="CUSTOM_PROCESS_INFO.INSTANCE_NUMBER:db_column_type">NUMBER</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_8">PROCESS_DN</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_DN:db_column_not_null">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_7">COMPOSITE_INSTANCE_ID</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_6">COMPOSITE_REVISION</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_5">COMPOSITE_LABEL</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_4">COMPOSITE_DN</entry>
+   <entry key="CUSTOM_PROCESS_INFO.INSTANCE_NUMBER:db_column_precision">20</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_3">COMPOSITE_NAME</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_DN:db_column_size">255</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_2">INSTANCE_ID</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_NAME:db_column_type">VARCHAR2</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_1">INSTANCE_NUMBER</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_column_0">CUSTOM_ID</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_INSTANCE_ID:db_column_type">VARCHAR2</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_LABEL:db_column_not_null">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO.INSTANCE_NUMBER:db_column_scale">2</entry>
+   <entry key="CUSTOM_PROCESS_INFO.ACTIVITY_NAME:db_column_type">VARCHAR2</entry>
+   <entry key="CUSTOM_PROCESS_INFO.INSTANCE_ID:db_column_type">VARCHAR2</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_NAME:db_column_size">255</entry>
+   <entry key="CUSTOM_PROCESS_INFO.INSTANCE_NUMBER:db_column_not_null">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_INSTANCE_ID:db_column_size">255</entry>
+   <entry key="CUSTOM_PROCESS_INFO.ACTIVITY_NAME:db_column_size">20</entry>
+   <entry key="CUSTOM_PROCESS_INFO.INSTANCE_ID:db_column_size">255</entry>
+   <entry key="return_single_result_set">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO.PROCESS_DN:db_column_type">VARCHAR2</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_REVISION:db_column_type">VARCHAR2</entry>
+   <entry key="CUSTOM_PROCESS_INFO.CUSTOM_ID:db_column_type">VARCHAR2</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_INSTANCE_ID:db_column_not_null">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO:db_table_type">TABLE</entry>
+   <entry key="CUSTOM_PROCESS_INFO.PROCESS_DN:db_column_size">255</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_REVISION:db_column_size">255</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_LABEL:db_column_type">VARCHAR2</entry>
+   <entry key="CUSTOM_PROCESS_INFO.COMPOSITE_NAME:db_column_not_null">false</entry>
+   <entry key="CUSTOM_PROCESS_INFO.CUSTOM_ID:db_column_size">255</entry>
+</properties>

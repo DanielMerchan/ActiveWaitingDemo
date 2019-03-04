@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns0="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname namespaceURI="http://xmlns.oracle.com/bpmn/bpmnProcess/Demo" localpart="Demo.service"/>
+      <port-info>
+         <wsdl-port namespaceURI="http://xmlns.oracle.com/bpmn/bpmnProcess/Demo" localpart="DemoPort"/>
+         <runtime/>
+         <operations>
+            <operation name="start"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

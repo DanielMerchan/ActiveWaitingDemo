@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="AssignedTasks-tf">
+    <default-activity>AssignedTasks</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__1">
+      <managed-bean-name>assignedTasksBacking</managed-bean-name>
+      <managed-bean-class>com.magicpigeon.demo.jsf.taskflow.assignedtasks.AssignedTasksBacking</managed-bean-class>
+      <managed-bean-scope>backingBean</managed-bean-scope>
+      <managed-property id="__3">
+        <property-name>assignedTasksHelper</property-name>
+        <property-class>com.magicpigeon.demo.jsf.taskflow.assignedtasks.AssignedTasksHelper</property-class>
+        <value>#{viewScope.assignedTasksHelper}</value>
+      </managed-property>
+    </managed-bean>
+    <managed-bean id="__2">
+      <managed-bean-name>assignedTasksHelper</managed-bean-name>
+      <managed-bean-class>com.magicpigeon.demo.jsf.taskflow.assignedtasks.AssignedTasksHelper</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
+    <view id="AssignedTasks">
+      <page>/WEB-INF/com/magicpigeon/demo/jsf/taskflow/assignedtasks/AssignedTasks.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

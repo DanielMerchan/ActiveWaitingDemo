@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="12.1.3" fileRevision="20120601"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="Demo">
+      <topicDocumentations>
+         <topicDocumentation name="Demo"/>
+         <topicDocumentation name="ACT24976594989250">
+            <labels>
+               <label locale="en">DemoTask</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT24977496175751">
+            <labels>
+               <label locale="en">RegisterCustomProcessInfo</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT2497644151479">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT24976441514753">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT24976584671612">
+            <labels>
+               <label locale="en">SimulateActivity1</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT24976588507779">
+            <labels>
+               <label locale="en">SimulateActivity2</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT24976590735995">
+            <labels>
+               <label locale="en">SimulateActivity3</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf24976441514737"/>
+         <topicDocumentation name="sf24976588147341"/>
+         <topicDocumentation name="sf24976589060673"/>
+         <topicDocumentation name="sf24976591670689"/>
+         <topicDocumentation name="sf24976597361848"/>
+         <topicDocumentation name="sf24977501474743"/>
+      </topicDocumentations>
+   </component>
+</processDocumentation>

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Demo" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/Demo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>
+    <abstractWSDL>http://localhost:7101/soa-infra/services/default/DemoProcess!1.0/WSDLs/Demo.wsdl</abstractWSDL>
+  </wsdl:documentation>
+  <plnk:partnerLinkType name="DemoPortTypePartnerLinkType">
+    <plnk:role name="DemoPortTypeProvider">
+      <plnk:portType name="tns:DemoPortType"/>
+    </plnk:role>
+  </plnk:partnerLinkType>
+  <wsp:Policy xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="wsaddr_policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+    <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"/>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Demo">
+      <xsd:element name="start">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customId" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="endResponse">
+        <xsd:complexType>
+          <xsd:sequence/>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="endResponse">
+    <wsdl:part name="parameters" element="tns:endResponse"/>
+  </wsdl:message>
+  <wsdl:message name="start">
+    <wsdl:part name="parameters" element="tns:start"/>
+  </wsdl:message>
+  <wsdl:portType name="DemoPortTypeCallBack">
+    <wsdl:operation name="end">
+      <wsdl:input message="tns:endResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="DemoPortType">
+    <wsdl:operation name="start">
+      <wsdl:input message="tns:start"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DemoBinding" type="tns:DemoPortType">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsp:PolicyReference xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" URI="#wsaddr_policy" wsdl:required="false"/>
+    <wsdl:operation name="start">
+      <wsdlsoap:operation style="document" soapAction="start"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DemoPortTypeCallBackBinding" type="tns:DemoPortTypeCallBack">
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="end">
+      <wsdlsoap:operation style="document" soapAction="end"/>
+      <wsdl:input>
+        <wsdlsoap:body use="literal" namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Demo"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Demo.service">
+    <wsdl:port name="DemoPort" binding="tns:DemoBinding">
+      <wsdlsoap:address location="http://localhost:7101/soa-infra/services/default/DemoProcess/Demo.service"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
