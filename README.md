@@ -6,7 +6,7 @@ In this Demonstration, the application sniffers what is happening in the backgro
 
 The Popup displaying the Active Waiting displays the BPM Audit Image and a Text Area of the name of the activities being executed.
 
-Image Placeholder
+[!alt text](https://github.com/DanielMerchan/ActiveWaitingDemo/blob/master/BPMActiveWaitignDemo.png)
 
 # Explanation of the Demonstration
 
